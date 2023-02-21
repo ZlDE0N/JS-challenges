@@ -1,167 +1,113 @@
+//****1/4****//----DOM selector methods
+// assign the correct element to the variable
+const buttonElem = document.getElementById("button");
 
-// Manipulate DOM
-const body = document.querySelector('body'); 
-const clSwitch1 = document.getElementById('switch1');
-const clSwitch2 = document.getElementById('switch2');
-const clSwitch3 = document.getElementById('switch3');
+buttonElem.addEventListener('click', () => {
+  const oldText = buttonElem.innerText;
+  return button.innerText = oldText === "ON" ? "OFF" : "ON";
+});
+//****2/4****//----DOM selector methods
+const buttonElem2 = document.querySelector("#wrapper button");
+const inputElem = document.querySelector("#wrapper input");
 
-const screen = document.getElementById('screen');
-const del = document.getElementById('del');
-const reset = document.getElementById('reset');
-const equal = document.getElementById('equal');
-
-const sum = document.getElementById('sum');
-const sub = document.getElementById('sub');
-const mult = document.getElementById('mult');
-const div = document.getElementById('div');
-
-const one = document.getElementById('one');
-const two = document.getElementById('two');
-const three = document.getElementById('three');
-const four = document.getElementById('four');
-const five = document.getElementById('five');
-const six = document.getElementById('six');
-const seven = document.getElementById('seven');
-const eight = document.getElementById('eight');
-const nine = document.getElementById('nine');
-const zero = document.getElementById('zero');
-const dec = document.getElementById('dec');
-let operandoa, operandob, operacion, res = 0;
-
-// Events whit click action 
-clSwitch1.addEventListener('click', (e) => {
-  body.className = '';
+buttonElem2.addEventListener('click', () => {
+  const oldText = inputElem.value;
+    return inputElem.value = oldText === "ON" ? "OFF" : "ON";
 });
-
-clSwitch2.addEventListener('click', (e) => {
-  body.className = 'theme2';
-});
-
-clSwitch3.addEventListener('click', (e) => {
-  body.className = 'theme3';
-});
-
-one.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + one.value;
-});
-two.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + two.value;
-});
-three.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + three.value;
-});
-four.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + four.value;
-});
-five.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + five.value;
-});
-six.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + six.value;
-});
-seven.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + seven.value;
-});
-eight.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + eight.value;
-});
-nine.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + nine.value;
-});
-zero.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + zero.value;
-});
-dec.addEventListener('click', (e) => {
-  screen.textContent = screen.textContent + dec.value;
-});
-
-// Function for create a acctions, and btn events
-sum.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
-  operacion = "+";
-  delet();
-  sum.setAttribute('disabled', '');
-});
-
-sub.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
-  operacion = "-";
-  delet();
-  sub.setAttribute('disabled', '');
-});
-
-mult.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
-  operacion = "x";
-  delet();
-  mult.setAttribute('disabled', '');
-});
-
-div.addEventListener('click', (e) => {
-  operandoa = screen.textContent;
-  operacion = "/";
-  delet();
-  div.setAttribute('disabled', '');
-});
-
-del.addEventListener('click', (e) => {
-  delet();
-});
-
-reset.addEventListener('click', (e) => {
-  resetear();
-});
-
-equal.addEventListener('click', (e) => {
-  operandob = screen.textContent;
-  resolve();
-});
-
-const delet = () => {
-  screen.textContent = "";
-  resetDisabled();
-}
-
-const resetear = () => {
-  operandoa = 0;
-  operandob = 0;
-  operacion = "";
-  delet();
-}
-
-const resetDisabled = () => {
-  sum.removeAttribute('disabled');
-  sub.removeAttribute('disabled');
-  mult.removeAttribute('disabled');
-  div.removeAttribute('disabled');
-}
-
-//Function for resolve operations
-const resolve = () => {
-  if (!operandoa || !operandob) {
-    res = 0;
+//****3/4****//----DOM selector methods
+const listItems = document.querySelectorAll("#list li");
+  
+  const handleHover = (event) => {
+    return event.target.innerText = 'ON';
+  };
+  
+  if(listItems.length > 1) {
+    listItems.forEach(item => item.addEventListener('mouseover', handleHover));
   }
-  else {
-    switch(operacion){
-      case "+":
-        res = parseFloat(operandoa) + parseFloat(operandob);
-        sum.removeAttribute('disabled');
-        break;
-      case "-":
-        res = parseFloat(operandoa) - parseFloat(operandob);
-        sub.removeAttribute('disabled');
-        break;
-      case "x":
-        res = parseFloat(operandoa) * parseFloat(operandob);
-        mult.removeAttribute('disabled');
-        break;
-      case "/":
-        res = parseFloat(operandoa) / parseFloat(operandob);
-        div.removeAttribute('disabled');
-        break;
-    }
-  }
+//****3/4****//----Premium ----DOM selector methods
+//****1/5****//----Events and user interactions
+const button = document.getElementById('button');
+const input = document.getElementById('input');
 
-  resetear();
-  screen.textContent = res.toLocaleString('es-MX');
+const handleClick = () => {
+  input.value = 'Hello World';
+};
+
+button.addEventListener('click', handleClick);
+//****2/5****//----Events and user interactions
+const element = document.getElementById('element');
+const changeText = () => {
+  element.innerText = 'Thanks!';
+};
+//****3/5****(Is the same)//----Events and user interactions
+element.addEventListener("mouseover", changeText);
+//****1/4****//----DOM manipulation
+const button = document.querySelector('#button');
+  
+const removeRedCircle = () => {
+  const redCircle = document.querySelector('#red');
+  redCircle.parentNode.removeChild(redCircle);
+};
+//****2/4****//----DOM manipulation
+const button = document.querySelector('#wrapper button');
+  
+const changeInput = () => {
+  const input = document.querySelector('#inputEl');
+  if(input) {
+    input.value = 'Hello World';
+  }
+};
+
+button.addEventListener('click', changeInput);
+
+document.querySelector('#wrapper input').setAttribute('id', 'inputEl');
+//****3/4****// ---->Premium (----DOM manipulation)
+//****4/4****// ---->Premium(----DOM manipulation)
+
+//****1/5****//----(DOM fundamentals) 
+const button = document.getElementById('button');
+button.addEventListener('click', () => {
+  const checkbox = document.getElementById('checkbox');
+  checkbox.checked = true;
+});
+//****2/5****//(DOM fundamentals)
+const button = document.getElementById('button');
+button.addEventListener('click' , () => {
+  const firstName = document.getElementById('firstName');
+  const lastName = document.getElementById('lastName');
+  const fullName = document.getElementById('fullName');
+  fullName.value = firstName.value + ' ' + lastName.value;
+});
+//****3/5****// ---->Premium (DOM fundamentals)
+//****4/5****// ---->Premium (DOM fundamentals)
+
+//****5/5****// ---DOM fundamentals
+const list = document.getElementById('list');
+const balloons = list.children;
+const popBalloon = (event) => {
+  const balloon = event.target;
+  balloon.style.visibility = 'hidden';
+};
+for (let i = 0; i < balloons.length; i++) {
+  balloons[i].addEventListener('mouseover', popBalloon);
 }
+
+//****1/1****//Recursive Functions 
+const button = document.getElementById('button');
+let stopped = false;
+ 
+function move(isReturning) {
+ const width = button.parentNode.clientWidth;
+ const left = parseInt(button.style.left , 10) || 0;
+ if (!stopped) {
+    button.style.left = (isReturning ? left - 1 : left + 1) + 'px';
+    setTimeout(() => move ((isReturning && left > 0) || left === width - button.clientWidth), 10);
+ };
+};
+ 
+move();
+ 
+button.addEventListener('click', () => {
+  stopped = !stopped;
+  move();
+});
