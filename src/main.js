@@ -111,3 +111,4 @@ button.addEventListener('click', () => {
   stopped = !stopped;
   move();
 });
+// divido en secciones
